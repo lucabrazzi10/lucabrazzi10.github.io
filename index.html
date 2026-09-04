@@ -246,6 +246,39 @@ ul.bullets b{color:var(--ink);font-weight:600}
 }
 .entry-body p{color:var(--ink-2);font-size:.93rem;line-height:1.5}
 
+/* ---------- contact / booking ---------- */
+.cta{
+  margin-top:2.5rem;border:1px solid var(--line);border-radius:8px;
+  background:var(--surface);overflow:hidden;box-shadow:var(--shadow);
+}
+.cta-spectrum{display:flex;height:5px}
+.cta-spectrum i{flex:1}
+.cta-spectrum i:nth-child(1){background:var(--c1)}
+.cta-spectrum i:nth-child(2){background:var(--c2)}
+.cta-spectrum i:nth-child(3){background:var(--c3)}
+.cta-spectrum i:nth-child(4){background:var(--c4)}
+.cta-spectrum i:nth-child(5){background:var(--c5)}
+.cta-inner{padding:1.75rem 1.8rem}
+.cta h2{margin-bottom:.4rem}
+.cta p{color:var(--ink-2);max-width:52ch}
+.cta-actions{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.3rem}
+.btn{
+  font-family:var(--body);font-size:.95rem;font-weight:600;
+  padding:.6rem 1.15rem;border-radius:6px;border:1.5px solid transparent;
+  display:inline-flex;align-items:center;gap:.5rem;cursor:pointer;
+}
+.btn-primary{background:var(--c1);color:#fff;border-color:var(--c1)}
+.btn-primary:hover{filter:brightness(1.08)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn-ghost:hover{background:var(--surface-2)}
+a.btn{border-bottom-width:1.5px}
+.cal-frame{
+  margin-top:1.4rem;border:1px solid var(--line);border-radius:6px;
+  overflow:hidden;background:var(--surface-2);
+}
+.cal-frame iframe{display:block;width:100%;height:640px;border:0}
+@media (max-width:760px){ .cal-frame iframe{height:760px} }
+
 /* ---------- certs / edu ---------- */
 .certs{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.35rem}
 .cert{
@@ -474,6 +507,32 @@ footer{padding:2.5rem 0 0;border-top:1px solid var(--line-soft);margin-top:1rem}
     </div>
   </section>
 
+  <section class="s-exp" id="contact">
+    <div class="sec">
+      <div class="sec-label">Contact</div>
+      <div>
+        <h2>Get in touch</h2>
+        <p style="color:var(--ink-2);max-width:56ch">
+          Open to Staff and Principal platform, SRE, and edge infrastructure roles — remote,
+          or hybrid in the Twin Cities.
+        </p>
+
+        <div class="cta">
+          <div class="cta-spectrum"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="cta-inner">
+            <h2 style="font-size:1.25rem">Book a 30-minute call</h2>
+            <p>Pick a slot that works for you — no back-and-forth. Or just send an email and I'll reply the same day.</p>
+            <div class="cta-actions">
+              <a class="btn btn-primary" id="book-btn" href="mailto:alosmevas@gmail.com?subject=Intro%20call">Email me</a>
+              <a class="btn btn-ghost" href="https://www.linkedin.com/in/ade-f-58aaa497/">Connect on LinkedIn</a>
+            </div>
+            <div class="cal-frame" id="cal-frame" hidden></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <div class="footer-spectrum"><i></i><i></i><i></i><i></i><i></i></div>
     <div class="footer-line">
@@ -485,6 +544,33 @@ footer{padding:2.5rem 0 0;border-top:1px solid var(--line-soft);margin-top:1rem}
   </footer>
 
 </div>
+
+<script>
+  /* ---------------------------------------------------------------
+     BOOKING CALENDAR
+     Paste your scheduling link between the quotes to turn it on.
+     Example:  const BOOKING_LINK = "https://cal.com/abayomi-folarin/30min";
+     Leave it empty and the page shows the email button only.
+  --------------------------------------------------------------- */
+  const BOOKING_LINK = "";
+
+  (function () {
+    if (!BOOKING_LINK) return;
+
+    var btn = document.getElementById("book-btn");
+    btn.href = BOOKING_LINK;
+    btn.textContent = "Book a call";
+    btn.removeAttribute("target");
+
+    var frame = document.getElementById("cal-frame");
+    var iframe = document.createElement("iframe");
+    iframe.src = BOOKING_LINK;
+    iframe.title = "Booking calendar";
+    iframe.loading = "lazy";
+    frame.appendChild(iframe);
+    frame.hidden = false;
+  })();
+</script>
 
 </body>
 </html>
