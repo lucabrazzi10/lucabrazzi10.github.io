@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Paul Ade Folarin - Staff Platform Engineer, Site Reliability, Cloud & Edge Infrastructure.">
+<meta name="description" content="Paul Ade Folarin - Staff Platform Engineer. Cloud, Kubernetes, and CDN edge security across regulated, high-availability infrastructure.">
 <style>html{color-scheme:light dark}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Ade Folarin</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -127,6 +127,28 @@ a:focus-visible{outline:2px solid var(--c1);outline-offset:3px;border-radius:2px
 .contact a:hover{background:var(--surface-2)}
 .contact span{color:var(--muted)}
 
+/* ---------- impact band ---------- */
+.stats{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));
+  gap:1px;background:var(--line);border:1px solid var(--line);
+  border-radius:8px;overflow:hidden;margin-top:2.25rem;
+}
+.stat{background:var(--surface);padding:1rem 1.1rem}
+.stat .n{
+  font-family:var(--display);font-weight:800;font-size:1.75rem;
+  letter-spacing:-.03em;line-height:1.05;font-variant-numeric:tabular-nums;
+  display:block;
+}
+.stat:nth-child(1) .n{color:var(--c1)}
+.stat:nth-child(2) .n{color:var(--c2)}
+.stat:nth-child(3) .n{color:var(--c3)}
+.stat:nth-child(4) .n{color:var(--c4)}
+.stat:nth-child(5) .n{color:var(--c5)}
+.stat .l{
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;
+  color:var(--muted);display:block;margin-top:.4rem;line-height:1.35;
+}
+
 /* ---------- section scaffolding ---------- */
 section{--c:var(--c1);--w:var(--w1);padding:3rem 0;border-top:1px solid var(--line-soft)}
 section.s-tools{--c:var(--c1);--w:var(--w1)}
@@ -194,12 +216,19 @@ ul.bullets li::before{
 }
 ul.bullets b{color:var(--ink);font-weight:600}
 
-/* ---------- ops log ---------- */
-.log{display:grid;gap:.6rem}
+/* ---------- case log, nested inside a role ---------- */
+.caselog{margin-top:1.75rem;padding-top:1.4rem;border-top:1px solid var(--line)}
+.caselog-label{
+  font-family:var(--mono);font-size:.7rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--c3);margin-bottom:.15rem;
+  display:flex;align-items:center;gap:.5rem;
+}
+.caselog-label::before{content:"";width:1.1rem;height:3px;background:var(--c3);border-radius:99px;flex:none}
+.caselog .note{font-size:.9rem;margin:.35rem 0 1.1rem}
+.log{display:grid;gap:.35rem}
 .entry{
-  display:grid;grid-template-columns:8.5rem 1fr;gap:1.4rem;
-  padding:1rem 1.1rem;border-radius:6px;background:var(--surface);
-  border:1px solid var(--line);
+  display:grid;grid-template-columns:7.5rem 1fr;gap:1.1rem;
+  padding:.7rem .85rem;border-radius:5px;background:var(--surface-2);
 }
 .entry .tag{
   font-family:var(--mono);font-size:.68rem;font-weight:600;letter-spacing:.09em;
@@ -213,38 +242,24 @@ ul.bullets b{color:var(--ink);font-weight:600}
 .t-id{background:var(--w5);color:var(--c5)}
 .entry-body strong{
   display:block;font-family:var(--display);font-weight:600;
-  font-size:1rem;color:var(--ink);margin-bottom:.15rem;
+  font-size:.96rem;color:var(--ink);margin-bottom:.1rem;
 }
-.entry-body p{color:var(--ink-2);font-size:.97rem}
-
-/* ---------- projects ---------- */
-.projects{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr))}
-.card{
-  border:1px solid var(--line);border-top:4px solid var(--c);
-  border-radius:6px;padding:1.35rem 1.4rem;background:var(--surface);
-  box-shadow:var(--shadow);display:flex;flex-direction:column;gap:.6rem;
-}
-.card.p2{--c:var(--c5);--w:var(--w5)}
-.card p{color:var(--ink-2);font-size:.96rem}
-.stack{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:auto;padding-top:.6rem}
-.stack em{
-  font-family:var(--mono);font-style:normal;font-size:.7rem;
-  color:var(--c);background:var(--w);padding:.18rem .5rem;border-radius:99px;
-}
+.entry-body p{color:var(--ink-2);font-size:.93rem;line-height:1.5}
 
 /* ---------- certs / edu ---------- */
-.certs{display:grid;gap:.5rem}
-.cert{display:flex;gap:1rem;align-items:baseline;padding:.6rem .9rem;border-radius:5px}
-.cert:nth-child(1){background:var(--w5)} .cert:nth-child(1) .yr{color:var(--c5)}
+.certs{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.35rem}
+.cert{
+  display:inline-flex;gap:.5rem;align-items:baseline;
+  padding:.3rem .7rem;border-radius:99px;background:var(--w5);
+}
 .cert:nth-child(2){background:var(--w2)} .cert:nth-child(2) .yr{color:var(--c2)}
 .cert:nth-child(3){background:var(--w1)} .cert:nth-child(3) .yr{color:var(--c1)}
 .cert:nth-child(4){background:var(--w4)} .cert:nth-child(4) .yr{color:var(--c4)}
 .cert:nth-child(5){background:var(--w3)} .cert:nth-child(5) .yr{color:var(--c3)}
-.cert .yr{font-family:var(--mono);font-size:.76rem;font-variant-numeric:tabular-nums;font-weight:600}
-.cert .nm{color:var(--ink-2);font-size:.97rem}
-.edu{display:grid;gap:.9rem;margin-top:1.9rem}
-.edu div{display:flex;flex-wrap:wrap;gap:.25rem 1rem;align-items:baseline}
-.edu b{font-weight:600}
+.cert .yr{font-family:var(--mono);font-size:.72rem;font-variant-numeric:tabular-nums;font-weight:600;color:var(--c5)}
+.cert .nm{color:var(--ink-2);font-size:.88rem}
+.edu{display:flex;flex-wrap:wrap;gap:.3rem 1.4rem;color:var(--ink-2);font-size:.95rem}
+.edu b{font-weight:600;color:var(--ink)}
 .edu span{font-family:var(--mono);font-size:.78rem;color:var(--muted)}
 
 footer{padding:2.5rem 0 0;border-top:1px solid var(--line-soft);margin-top:1rem}
@@ -289,6 +304,14 @@ footer{padding:2.5rem 0 0;border-top:1px solid var(--line-soft);margin-top:1rem}
       <a href="https://github.com/lucabrazzi10">github.com/lucabrazzi10</a>
       <span>Minnesota · open to remote</span>
     </p>
+
+    <div class="stats">
+      <div class="stat"><span class="n">11 yrs</span><span class="l">platform &amp; reliability engineering</span></div>
+      <div class="stat"><span class="n">50%</span><span class="l">MTTR reduction after observability re-platform</span></div>
+      <div class="stat"><span class="n">~40%</span><span class="l">fewer deployment failures</span></div>
+      <div class="stat"><span class="n">$150K</span><span class="l">annual cloud spend reclaimed</span></div>
+      <div class="stat"><span class="n">5</span><span class="l">regulated jurisdictions operated</span></div>
+    </div>
   </header>
 
   <section class="s-tools">
@@ -338,6 +361,70 @@ footer{padding:2.5rem 0 0;border-top:1px solid var(--line-soft);margin-top:1rem}
             <li><b>Secrets management.</b> Architected centralized secrets on HashiCorp Vault with External Secrets Operator, eliminating hardcoded credentials and establishing automated key rotation.</li>
             <li><b>Escalation ownership.</b> Final escalation point for full-stack triage across OS, database, and application layers — OOMKilled limits, ingress routing drift, probe timeouts, Linux subsystem tuning — cutting cross-team triage time by half.</li>
           </ul>
+
+          <div class="caselog">
+            <div class="caselog-label">Selected recent work</div>
+            <p class="note">Edge, PKI, and incident work from the past few months. Client names, hostnames, and ticket references omitted.</p>
+            <div class="log">
+
+              <div class="entry">
+                <div class="tag t-waf">WAF</div>
+                <div class="entry-body">
+                  <strong>Enterprise WAF onboarding programme</strong>
+                  <p>Leading 18 production hostnames across several business units onto Akamai WAF — policy authoring, alert-mode bake, false-positive tuning with app owners, then enforcement, against a fixed quarter-end deadline.</p>
+                </div>
+              </div>
+
+              <div class="entry">
+                <div class="tag t-route">Routing</div>
+                <div class="entry-body">
+                  <strong>Path-based origin split for a mobile API tier</strong>
+                  <p>Carved a mobile API path out of a shared property onto a separate origin, staged and validated end to end before production activation. Pinned edge-to-origin HTTP/2 off where the origin's header handling required it, rather than discovering it in production.</p>
+                </div>
+              </div>
+
+              <div class="entry">
+                <div class="tag t-inc">Incident</div>
+                <div class="entry-body">
+                  <strong>Partner users blocked by an edge deny rule</strong>
+                  <p>A deny-by-IP rule on a partner-specific path was rejecting legitimate traffic. Diagnosed through Property Manager and Edge Diagnostics, corrected the allowlist, and restored access the same session.</p>
+                </div>
+              </div>
+
+              <div class="entry">
+                <div class="tag t-inc">Incident</div>
+                <div class="entry-body">
+                  <strong>400s from a recursive redirect loop</strong>
+                  <p>Traced repeated 400 responses to recursive URL encoding introduced at the application/IdP layer — not the edge. Handed the app team a reproducible trace instead of a workaround.</p>
+                </div>
+              </div>
+
+              <div class="entry">
+                <div class="tag t-inc">Incident</div>
+                <div class="entry-body">
+                  <strong>Intermittent 503s isolated to authoritative DNS</strong>
+                  <p>Ruled out configuration drift on a reporting hostname and demonstrated the failures tracked authoritative DNS flakiness, redirecting the investigation to the right owner.</p>
+                </div>
+              </div>
+
+              <div class="entry">
+                <div class="tag t-pki">PKI</div>
+                <div class="entry-body">
+                  <strong>Origin trust-chain rotation ahead of an EV CA expiry</strong>
+                  <p>Staged new root and intermediate CAs into custom trust sets across properties before an expiring EV intermediate could break origin verification — and used the same rotation to resolve a 503 caused when an origin cert change swapped its chain unannounced.</p>
+                </div>
+              </div>
+
+              <div class="entry">
+                <div class="tag t-id">Identity</div>
+                <div class="entry-body">
+                  <strong>SAML federation with an enterprise banking partner</strong>
+                  <p>Stood up a PingFederate SAML integration and, during certificate exchange, caught that a private key had been delivered mislabeled as a public certificate. Halted the exchange and escalated to security rather than installing it.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
 
         <div class="job alt">
@@ -362,96 +449,6 @@ footer{padding:2.5rem 0 0;border-top:1px solid var(--line-soft);margin-top:1rem}
             <li><b>Cloud economics.</b> Drove the cost program with Kubecost, Karpenter, and Auto Scaling — rightsizing instances and reclaiming orphaned resources for ~$150K in annual compute savings.</li>
             <li><b>Cassandra operations.</b> Built and operated clusters across all five jurisdictions — ring topology and replication-factor planning, scheduled repair via nodetool diagnostics, verified backup and restore.</li>
           </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="s-log">
-    <div class="sec">
-      <div class="sec-label">Recent work</div>
-      <div>
-        <h2>A sample of the current queue</h2>
-        <p class="note">Edge, PKI, and incident work from the past few months. Client names, hostnames, and ticket references are omitted.</p>
-        <div class="log">
-
-          <div class="entry">
-            <div class="tag t-waf">WAF</div>
-            <div class="entry-body">
-              <strong>Enterprise WAF onboarding programme</strong>
-              <p>Leading 18 production hostnames across several business units onto Akamai WAF — policy authoring, alert-mode bake, false-positive tuning with app owners, then enforcement, against a fixed quarter-end deadline.</p>
-            </div>
-          </div>
-
-          <div class="entry">
-            <div class="tag t-route">Routing</div>
-            <div class="entry-body">
-              <strong>Path-based origin split for a mobile API tier</strong>
-              <p>Carved a mobile API path out of a shared property onto a separate origin, staged and validated end to end before production activation. Pinned edge-to-origin HTTP/2 off where the origin's header handling required it, rather than discovering it in production.</p>
-            </div>
-          </div>
-
-          <div class="entry">
-            <div class="tag t-inc">Incident</div>
-            <div class="entry-body">
-              <strong>Partner users blocked by an edge deny rule</strong>
-              <p>A deny-by-IP rule on a partner-specific path was rejecting legitimate traffic. Diagnosed through Property Manager and Edge Diagnostics, corrected the allowlist, and restored access the same session.</p>
-            </div>
-          </div>
-
-          <div class="entry">
-            <div class="tag t-inc">Incident</div>
-            <div class="entry-body">
-              <strong>400s from a recursive redirect loop</strong>
-              <p>Traced repeated 400 responses to recursive URL encoding introduced at the application/IdP layer — not the edge. Handed the app team a reproducible trace instead of a workaround.</p>
-            </div>
-          </div>
-
-          <div class="entry">
-            <div class="tag t-inc">Incident</div>
-            <div class="entry-body">
-              <strong>Intermittent 503s isolated to authoritative DNS</strong>
-              <p>Ruled out configuration drift on a reporting hostname and demonstrated the failures tracked authoritative DNS flakiness, redirecting the investigation to the right owner.</p>
-            </div>
-          </div>
-
-          <div class="entry">
-            <div class="tag t-pki">PKI</div>
-            <div class="entry-body">
-              <strong>Origin trust-chain rotation ahead of an EV CA expiry</strong>
-              <p>Staged new root and intermediate CAs into custom trust sets across properties before an expiring EV intermediate could break origin verification — and used the same rotation to resolve a 503 caused when an origin cert change swapped its chain unannounced.</p>
-            </div>
-          </div>
-
-          <div class="entry">
-            <div class="tag t-id">Identity</div>
-            <div class="entry-body">
-              <strong>SAML federation with an enterprise banking partner</strong>
-              <p>Stood up a PingFederate SAML integration and, during certificate exchange, caught that a private key had been delivered mislabeled as a public certificate. Halted the exchange and escalated to security rather than installing it.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="s-built">
-    <div class="sec">
-      <div class="sec-label">Built</div>
-      <div>
-        <h2>Things I build outside work</h2>
-        <div class="projects">
-          <div class="card">
-            <h3>Premier League edge model</h3>
-            <p>A self-contained, browser-based match prediction app. Dixon–Coles bivariate Poisson with xG blending, bookmaker devig, and Kelly-criterion stake sizing — built to find edge against the closing line rather than to guess scorelines.</p>
-            <div class="stack"><em>Dixon–Coles</em><em>xG</em><em>devig</em><em>Kelly</em><em>single-file JS</em></div>
-          </div>
-          <div class="card p2">
-            <h3>Personal finance tracker</h3>
-            <p>An application for consolidating accounts and tracking spending and net position over time, built for my own use rather than as a product.</p>
-            <div class="stack"><em>personal tooling</em></div>
-          </div>
         </div>
       </div>
     </div>
