@@ -277,6 +277,11 @@ a.btn{border-bottom-width:1.5px}
   overflow:hidden;background:var(--surface-2);
 }
 .cal-frame iframe{display:block;width:100%;height:640px;border:0}
+#book-btn{font-family:var(--mono);font-size:.88rem;letter-spacing:-.01em}
+.copy-status{
+  font-family:var(--mono);font-size:.75rem;color:var(--c5);
+  margin:.7rem 0 0;min-height:1.1em;
+}
 @media (max-width:760px){ .cal-frame iframe{height:760px} }
 
 /* ---------- certs / edu ---------- */
@@ -523,9 +528,11 @@ footer{padding:2.5rem 0 0;border-top:1px solid var(--line-soft);margin-top:1rem}
             <h2 style="font-size:1.25rem">Book a 30-minute call</h2>
             <p>Pick a slot that works for you — no back-and-forth. Or just send an email and I'll reply the same day.</p>
             <div class="cta-actions">
-              <a class="btn btn-primary" id="book-btn" href="mailto:alosmevas@gmail.com?subject=Intro%20call">Email me</a>
-              <a class="btn btn-ghost" href="https://www.linkedin.com/in/ade-f-58aaa497/">Connect on LinkedIn</a>
+              <a class="btn btn-primary" id="book-btn" href="mailto:alosmevas@gmail.com?subject=Intro%20call">alosmevas@gmail.com</a>
+              <button class="btn btn-ghost" id="copy-btn" type="button">Copy address</button>
+              <a class="btn btn-ghost" href="https://www.linkedin.com/in/ade-f-58aaa497/">LinkedIn</a>
             </div>
+            <p class="copy-status" id="copy-status" aria-live="polite"></p>
             <div class="cal-frame" id="cal-frame" hidden></div>
           </div>
         </div>
@@ -569,6 +576,48 @@ footer{padding:2.5rem 0 0;border-top:1px solid var(--line-soft);margin-top:1rem}
     iframe.loading = "lazy";
     frame.appendChild(iframe);
     frame.hidden = false;
+  })();
+
+  /* Copy-to-clipboard fallback: mailto: is blocked in some embeds and does
+     nothing on machines with no default mail app. */
+  (function () {
+    var EMAIL = "alosmevas@gmail.com";
+    var btn = document.getElementById("copy-btn");
+    var status = document.getElementById("copy-status");
+    if (!btn) return;
+
+    function flash(msg) {
+      status.textContent = msg;
+      setTimeout(function () { status.textContent = ""; }, 2600);
+    }
+
+    btn.addEventListener("click", function () {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(EMAIL).then(
+          function () { flash("Copied " + EMAIL); },
+          function () { selectFallback(); }
+        );
+      } else {
+        selectFallback();
+      }
+    });
+
+    function selectFallback() {
+      var ta = document.createElement("textarea");
+      ta.value = EMAIL;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand("copy");
+        flash("Copied " + EMAIL);
+      } catch (e) {
+        flash(EMAIL);
+      }
+      document.body.removeChild(ta);
+    }
   })();
 </script>
 
