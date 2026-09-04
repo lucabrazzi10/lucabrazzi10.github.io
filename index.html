@@ -1,81 +1,493 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KeylessID.com - For Sale or Lease</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-      overflow: hidden;
-    }
-    .container {
-      max-width: 700px;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(10px);
-      animation: fadeIn 2s ease-in-out;
-    }
-    h1 {
-      font-size: 3em;
-      margin-bottom: 0.3em;
-      letter-spacing: 2px;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    }
-    p {
-      font-size: 1.3em;
-      margin-bottom: 2em;
-      line-height: 1.6em;
-      color: #e0e0e0;
-    }
-    .email-display {
-      display: inline-block;
-      font-size: 1.1em;
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 10px 20px;
-      border-radius: 10px;
-      margin-top: 20px;
-      color: #ffffff;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-    .footer {
-      margin-top: 30px;
-      font-size: 0.9em;
-      color: #bbb;
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Paul Ade Folarin - Staff Platform Engineer, Site Reliability, Cloud & Edge Infrastructure.">
+<style>html{color-scheme:light dark}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Ade Folarin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  </style>
+<style>
+:root{
+  /* ground + ink: violet-biased neutrals */
+  --bg:#FBFAFF;
+  --surface:#FFFFFF;
+  --surface-2:#F1EFF9;
+  --ink:#16132A;
+  --ink-2:#3E3960;
+  --muted:#6E688F;
+  --line:#DCD7F0;
+  --line-soft:#E9E5F7;
+  --shadow:0 1px 2px rgba(22,19,42,.05), 0 10px 26px -18px rgba(22,19,42,.4);
+
+  /* five-hue chromatic system */
+  --c1:#5A3BE0; --w1:#EBE5FF;   /* violet  — toolchain */
+  --c2:#0490A3; --w2:#D6F1F4;   /* cyan    — experience */
+  --c3:#D42461; --w3:#FBDDE8;   /* rose    — recent work */
+  --c4:#B87500; --w4:#FBEAC9;   /* amber   — built */
+  --c5:#18874C; --w5:#D8F1E2;   /* green   — credentials */
+
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --body:"Source Sans 3",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+
+  --rail:11.5rem;
+  --gap:2.75rem;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#100E1C;
+    --surface:#191630;
+    --surface-2:#221E3D;
+    --ink:#F0EEFC;
+    --ink-2:#CFCAE8;
+    --muted:#948DB8;
+    --line:#2E2A4E;
+    --line-soft:#241F42;
+    --shadow:0 1px 2px rgba(0,0,0,.5), 0 12px 30px -20px rgba(0,0,0,1);
+    --c1:#A78BFF; --w1:#241C48;
+    --c2:#3FD2E0; --w2:#0F3138;
+    --c3:#FF6A97; --w3:#3B172A;
+    --c4:#F2B23F; --w4:#372714;
+    --c5:#4CD98C; --w5:#12351F;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#100E1C;
+  --surface:#191630;
+  --surface-2:#221E3D;
+  --ink:#F0EEFC;
+  --ink-2:#CFCAE8;
+  --muted:#948DB8;
+  --line:#2E2A4E;
+  --line-soft:#241F42;
+  --shadow:0 1px 2px rgba(0,0,0,.5), 0 12px 30px -20px rgba(0,0,0,1);
+  --c1:#A78BFF; --w1:#241C48;
+  --c2:#3FD2E0; --w2:#0F3138;
+  --c3:#FF6A97; --w3:#3B172A;
+  --c4:#F2B23F; --w4:#372714;
+  --c5:#4CD98C; --w5:#12351F;
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:16.5px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--c1);text-decoration:none;border-bottom:1.5px solid color-mix(in srgb, currentColor 35%, transparent)}
+a:hover{border-bottom-color:currentColor}
+a:focus-visible{outline:2px solid var(--c1);outline-offset:3px;border-radius:2px}
+
+.wrap{max-width:66rem;margin:0 auto;padding:0 1.5rem 5rem}
+
+/* ---------- masthead ---------- */
+.masthead{padding:3.5rem 0 2.25rem}
+.name{
+  font-family:var(--display);font-weight:800;
+  font-size:clamp(2.5rem,6.6vw,4.4rem);
+  line-height:1;letter-spacing:-.04em;margin:0;
+  text-wrap:balance;
+}
+.name .a{color:var(--c1)}
+.name .b{color:var(--c3)}
+.spectrum{display:flex;height:6px;border-radius:99px;overflow:hidden;margin:1.5rem 0 1.4rem;max-width:34rem}
+.spectrum i{flex:1}
+.spectrum i:nth-child(1){background:var(--c1)}
+.spectrum i:nth-child(2){background:var(--c2)}
+.spectrum i:nth-child(3){background:var(--c3)}
+.spectrum i:nth-child(4){background:var(--c4)}
+.spectrum i:nth-child(5){background:var(--c5)}
+.role{
+  font-family:var(--mono);font-size:.8rem;font-weight:600;
+  letter-spacing:.11em;text-transform:uppercase;margin:0;
+  display:flex;flex-wrap:wrap;gap:.35rem .7rem;
+}
+.role b{font-weight:600}
+.role b:nth-child(1){color:var(--c1)}
+.role b:nth-child(2){color:var(--c2)}
+.role b:nth-child(3){color:var(--c3)}
+.role s{color:var(--muted);text-decoration:none}
+.lede{font-size:1.16rem;color:var(--ink-2);max-width:62ch;margin:1.5rem 0 0}
+.lede mark{background:var(--w2);color:var(--ink);padding:.05em .25em;border-radius:3px}
+.contact{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.9rem;font-family:var(--mono);font-size:.8rem}
+.contact a,.contact span{
+  border:1.5px solid var(--line);border-radius:99px;
+  padding:.3rem .8rem;color:var(--ink-2);
+}
+.contact a:nth-of-type(1){border-color:var(--c1);color:var(--c1)}
+.contact a:nth-of-type(2){border-color:var(--c2);color:var(--c2)}
+.contact a:nth-of-type(3){border-color:var(--c4);color:var(--c4)}
+.contact a:hover{background:var(--surface-2)}
+.contact span{color:var(--muted)}
+
+/* ---------- section scaffolding ---------- */
+section{--c:var(--c1);--w:var(--w1);padding:3rem 0;border-top:1px solid var(--line-soft)}
+section.s-tools{--c:var(--c1);--w:var(--w1)}
+section.s-exp{--c:var(--c2);--w:var(--w2)}
+section.s-log{--c:var(--c3);--w:var(--w3)}
+section.s-built{--c:var(--c4);--w:var(--w4)}
+section.s-cred{--c:var(--c5);--w:var(--w5)}
+.sec{display:grid;grid-template-columns:var(--rail) 1fr;gap:var(--gap);align-items:start}
+.sec-label{
+  font-family:var(--mono);font-size:.73rem;font-weight:600;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--c);
+  padding-top:.4rem;position:sticky;top:1.25rem;
+  display:flex;align-items:center;gap:.55rem;
+}
+.sec-label::before{content:"";width:1.6rem;height:3px;background:var(--c);border-radius:99px;flex:none}
+h2{
+  font-family:var(--display);font-weight:700;font-size:1.6rem;
+  letter-spacing:-.022em;margin:0 0 1.35rem;text-wrap:balance;
+}
+h3{font-family:var(--display);font-weight:600;font-size:1.1rem;letter-spacing:-.012em;margin:0}
+p{margin:0 0 1rem}
+p:last-child{margin-bottom:0}
+.note{color:var(--muted);max-width:60ch;margin-bottom:1.6rem}
+
+/* ---------- skills ---------- */
+.skills{display:grid;gap:0}
+.skill-row{
+  display:grid;grid-template-columns:13.5rem 1fr;gap:1.5rem;
+  padding:.75rem .8rem;border-radius:5px;
+}
+.skill-row:nth-child(odd){background:var(--surface-2)}
+.skill-row dt{
+  font-family:var(--mono);font-size:.77rem;font-weight:600;
+  letter-spacing:.04em;color:var(--c);text-transform:uppercase;padding-top:.2rem;
+}
+.skill-row dd{margin:0;color:var(--ink-2)}
+
+/* ---------- experience ---------- */
+.job{
+  background:var(--surface);border:1px solid var(--line);
+  border-left:4px solid var(--c);border-radius:6px;
+  padding:1.5rem 1.6rem;box-shadow:var(--shadow);margin-bottom:1.25rem;
+}
+.job:last-child{margin-bottom:0}
+.job.alt{border-left-color:var(--c1)}
+.job.alt .chip{background:var(--w1);color:var(--c1)}
+.job.alt ul.bullets li::before{background:var(--c1)}
+.job-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem 1rem}
+.job-org{font-family:var(--mono);font-size:.83rem;color:var(--muted);letter-spacing:.03em;margin-top:.15rem}
+.dates{
+  font-family:var(--mono);font-size:.77rem;color:var(--muted);
+  font-variant-numeric:tabular-nums;margin-left:auto;white-space:nowrap;
+}
+.scale{display:flex;flex-wrap:wrap;gap:.4rem;margin:1rem 0 1.4rem}
+.chip{
+  font-family:var(--mono);font-size:.71rem;font-weight:500;letter-spacing:.02em;
+  background:var(--w);color:var(--c);padding:.27rem .6rem;border-radius:99px;
+  font-variant-numeric:tabular-nums;
+}
+ul.bullets{list-style:none;margin:0;padding:0;display:grid;gap:1rem}
+ul.bullets li{padding-left:1.2rem;position:relative;color:var(--ink-2)}
+ul.bullets li::before{
+  content:"";position:absolute;left:0;top:.55em;
+  width:.5rem;height:.5rem;border-radius:99px;background:var(--c);
+}
+ul.bullets b{color:var(--ink);font-weight:600}
+
+/* ---------- ops log ---------- */
+.log{display:grid;gap:.6rem}
+.entry{
+  display:grid;grid-template-columns:8.5rem 1fr;gap:1.4rem;
+  padding:1rem 1.1rem;border-radius:6px;background:var(--surface);
+  border:1px solid var(--line);
+}
+.entry .tag{
+  font-family:var(--mono);font-size:.68rem;font-weight:600;letter-spacing:.09em;
+  text-transform:uppercase;padding:.24rem .55rem;border-radius:99px;
+  align-self:start;justify-self:start;
+}
+.t-waf{background:var(--w3);color:var(--c3)}
+.t-route{background:var(--w1);color:var(--c1)}
+.t-inc{background:var(--w4);color:var(--c4)}
+.t-pki{background:var(--w2);color:var(--c2)}
+.t-id{background:var(--w5);color:var(--c5)}
+.entry-body strong{
+  display:block;font-family:var(--display);font-weight:600;
+  font-size:1rem;color:var(--ink);margin-bottom:.15rem;
+}
+.entry-body p{color:var(--ink-2);font-size:.97rem}
+
+/* ---------- projects ---------- */
+.projects{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr))}
+.card{
+  border:1px solid var(--line);border-top:4px solid var(--c);
+  border-radius:6px;padding:1.35rem 1.4rem;background:var(--surface);
+  box-shadow:var(--shadow);display:flex;flex-direction:column;gap:.6rem;
+}
+.card.p2{--c:var(--c5);--w:var(--w5)}
+.card p{color:var(--ink-2);font-size:.96rem}
+.stack{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:auto;padding-top:.6rem}
+.stack em{
+  font-family:var(--mono);font-style:normal;font-size:.7rem;
+  color:var(--c);background:var(--w);padding:.18rem .5rem;border-radius:99px;
+}
+
+/* ---------- certs / edu ---------- */
+.certs{display:grid;gap:.5rem}
+.cert{display:flex;gap:1rem;align-items:baseline;padding:.6rem .9rem;border-radius:5px}
+.cert:nth-child(1){background:var(--w5)} .cert:nth-child(1) .yr{color:var(--c5)}
+.cert:nth-child(2){background:var(--w2)} .cert:nth-child(2) .yr{color:var(--c2)}
+.cert:nth-child(3){background:var(--w1)} .cert:nth-child(3) .yr{color:var(--c1)}
+.cert:nth-child(4){background:var(--w4)} .cert:nth-child(4) .yr{color:var(--c4)}
+.cert:nth-child(5){background:var(--w3)} .cert:nth-child(5) .yr{color:var(--c3)}
+.cert .yr{font-family:var(--mono);font-size:.76rem;font-variant-numeric:tabular-nums;font-weight:600}
+.cert .nm{color:var(--ink-2);font-size:.97rem}
+.edu{display:grid;gap:.9rem;margin-top:1.9rem}
+.edu div{display:flex;flex-wrap:wrap;gap:.25rem 1rem;align-items:baseline}
+.edu b{font-weight:600}
+.edu span{font-family:var(--mono);font-size:.78rem;color:var(--muted)}
+
+footer{padding:2.5rem 0 0;border-top:1px solid var(--line-soft);margin-top:1rem}
+.footer-spectrum{display:flex;height:4px;border-radius:99px;overflow:hidden;margin-bottom:1.4rem}
+.footer-spectrum i{flex:1}
+.footer-spectrum i:nth-child(1){background:var(--c1)}
+.footer-spectrum i:nth-child(2){background:var(--c2)}
+.footer-spectrum i:nth-child(3){background:var(--c3)}
+.footer-spectrum i:nth-child(4){background:var(--c4)}
+.footer-spectrum i:nth-child(5){background:var(--c5)}
+.footer-line{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;color:var(--muted);font-family:var(--mono);font-size:.76rem;letter-spacing:.03em}
+
+@media (max-width:760px){
+  :root{--gap:.9rem}
+  .sec{grid-template-columns:1fr;gap:1rem}
+  .sec-label{position:static;padding-top:0}
+  .skill-row,.entry{grid-template-columns:1fr;gap:.4rem}
+  .dates{margin-left:0;width:100%}
+  .job{padding:1.2rem 1.15rem}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
 </head>
 <body>
-  <div class="container">
-    <h1>KeylessID.com</h1>
-    <p>This premium domain is available for <strong>sale or lease</strong>.<br>
-       Perfect for Web3, identity, or passwordless authentication ventures.
+
+
+<div class="wrap">
+
+  <header class="masthead">
+    <h1 class="name">Paul <span class="a">Ade</span> <span class="b">Folarin</span></h1>
+    <div class="spectrum"><i></i><i></i><i></i><i></i><i></i></div>
+    <p class="role"><b>Staff Platform Engineer</b><s>/</s><b>Site Reliability</b><s>/</s><b>Cloud &amp; Edge Infrastructure</b></p>
+    <p class="lede">
+      Eleven years building and stabilizing regulated, high-availability infrastructure across AWS,
+      Azure, and on-premise estates — <mark>multi-jurisdictional Kubernetes fleets</mark>, Zero-Trust service
+      mesh, event-driven pipelines, and edge security at the CDN and WAF layer. I own architecture end
+      to end, run incident command when things break, and leave the post-mortem better than the outage.
     </p>
-    <div class="email-display">knowmore@keylessid.com</div>
-    <div class="footer">Serious inquiries only. Make your offer today.</div>
-  </div>
+    <p class="contact">
+      <a href="mailto:alosmevas@gmail.com">alosmevas@gmail.com</a>
+      <a href="https://www.linkedin.com/in/ade-f-58aaa497/">linkedin.com/in/ade-f</a>
+      <a href="https://github.com/lucabrazzi10">github.com/lucabrazzi10</a>
+      <span>Minnesota · open to remote</span>
+    </p>
+  </header>
+
+  <section class="s-tools">
+    <div class="sec">
+      <div class="sec-label">Toolchain</div>
+      <div>
+        <h2>What I work in</h2>
+        <dl class="skills">
+          <div class="skill-row"><dt>Cloud &amp; edge</dt><dd>AWS, Azure, GCP, VMware TKG, Akamai (WAF / CDN)</dd></div>
+          <div class="skill-row"><dt>Orchestration</dt><dd>Kubernetes (EKS, AKS, TKG), Docker, Helm, Kustomize</dd></div>
+          <div class="skill-row"><dt>Infrastructure as code</dt><dd>Terraform, Terragrunt, OpenTofu, Ansible</dd></div>
+          <div class="skill-row"><dt>CI/CD &amp; GitOps</dt><dd>ArgoCD, Harness, Jenkins, GitHub Actions</dd></div>
+          <div class="skill-row"><dt>Networking &amp; mesh</dt><dd>Istio, Envoy, Transit Gateway, Direct Connect, Route 53</dd></div>
+          <div class="skill-row"><dt>Security &amp; DevSecOps</dt><dd>HashiCorp Vault, External Secrets Operator, OPA / Gatekeeper, Trivy, SonarQube, PingFederate SAML</dd></div>
+          <div class="skill-row"><dt>Observability</dt><dd>Prometheus, Grafana, OpenTelemetry, Loki, Tempo, Splunk, Dynatrace</dd></div>
+          <div class="skill-row"><dt>Data &amp; storage</dt><dd>Cassandra, Redis, Amazon FSx, S3</dd></div>
+          <div class="skill-row"><dt>Event &amp; serverless</dt><dd>EventBridge, SQS, Lambda, Transfer Family</dd></div>
+          <div class="skill-row"><dt>Languages</dt><dd>Python, Bash, Go, PowerShell, Linux</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="s-exp">
+    <div class="sec">
+      <div class="sec-label">Experience</div>
+      <div>
+        <h2>Where I've done it</h2>
+
+        <div class="job">
+          <div class="job-head">
+            <h3>Senior DevOps &amp; Platform Engineer</h3>
+            <span class="dates">Aug 2023 — present</span>
+          </div>
+          <div class="job-org">Deluxe Corporation</div>
+          <div class="scale">
+            <span class="chip">10+ clusters</span>
+            <span class="chip">~200 nodes</span>
+            <span class="chip">100+ services</span>
+            <span class="chip">payments &amp; financial workloads</span>
+          </div>
+          <ul class="bullets">
+            <li><b>Cloud migration, monolith and microservices.</b> Led end-to-end migration of on-premise workloads onto a multi-AZ, cloud-native AWS architecture — both a legacy monolithic stack and containerized services. Designed the landing zone on Direct Connect, Transit Gateway, strict subnet isolation, FSx shared storage, and an HA/DR database cluster, and ran Snowball/Snowcone bulk transfer through go-live cutover.</li>
+            <li><b>Event-driven re-architecture.</b> Replaced brittle, batch-heavy SFTP file processing with an EventBridge / SQS / serverless pipeline, removing single points of failure and sharply cutting processing latency for B2B clients. Provisioned AWS Transfer Family with least-privilege IAM isolation per external client.</li>
+            <li><b>Edge security.</b> Own Akamai edge protection for financial applications — Layer-7 WAF policy, TLS termination, rate limiting, and CDN caching strategy — with WAF events fed to Splunk for SIEM correlation and false-positive tuning.</li>
+            <li><b>Release engineering and toil reduction.</b> Standardized delivery across Harness and Jenkins with strict validation gates and automated rollback triggers, cutting deployment failure rates ~40%. Python and Bash automation removed ~70% of manual maintenance toil.</li>
+            <li><b>Secrets management.</b> Architected centralized secrets on HashiCorp Vault with External Secrets Operator, eliminating hardcoded credentials and establishing automated key rotation.</li>
+            <li><b>Escalation ownership.</b> Final escalation point for full-stack triage across OS, database, and application layers — OOMKilled limits, ingress routing drift, probe timeouts, Linux subsystem tuning — cutting cross-team triage time by half.</li>
+          </ul>
+        </div>
+
+        <div class="job alt">
+          <div class="job-head">
+            <h3>Staff DevOps Engineer</h3>
+            <span class="dates">Aug 2015 — Aug 2023</span>
+          </div>
+          <div class="job-org">Everi Games</div>
+          <div class="scale">
+            <span class="chip">5 regulated jurisdictions</span>
+            <span class="chip">5 clusters</span>
+            <span class="chip">~120 nodes</span>
+            <span class="chip">60+ microservices</span>
+          </div>
+          <ul class="bullets">
+            <li><b>Remote Game Server platform ownership.</b> Ran the platform across five gaming jurisdictions on AKS, EKS, and VMware TKG — each under separate compliance, licensing, and data-residency controls.</li>
+            <li><b>Incident command and technical leadership.</b> Established the incident command structure and blameless post-mortem practice across multiple engineering pods; drove consensus on distributed systems design and mentored engineers on architecture and on-call readiness.</li>
+            <li><b>Observability re-platform.</b> Led migration from Wavefront to Prometheus, Grafana, and OpenTelemetry, standardizing traces and metrics behind SLI/SLO-driven alerting. On-call moved from threshold alarms to actionable context; MTTR halved.</li>
+            <li><b>Zero-Trust service mesh.</b> Implemented Istio to enforce mutual TLS on all pod-to-pod traffic, replacing ad-hoc network policy with one identity-based authorization model.</li>
+            <li><b>Reusable infrastructure as code.</b> Built a Terraform module library for AWS and Azure foundations — VPC segmentation, IAM permission boundaries, SCPs, encryption defaults — collapsing environment provisioning from days to hours.</li>
+            <li><b>DevSecOps and delivery.</b> Embedded Trivy and SonarQube in CI and enforced OPA/Gatekeeper admission policy to block non-compliant workloads at deploy time; standardized GitOps on ArgoCD, Helm, and Kustomize.</li>
+            <li><b>Cloud economics.</b> Drove the cost program with Kubecost, Karpenter, and Auto Scaling — rightsizing instances and reclaiming orphaned resources for ~$150K in annual compute savings.</li>
+            <li><b>Cassandra operations.</b> Built and operated clusters across all five jurisdictions — ring topology and replication-factor planning, scheduled repair via nodetool diagnostics, verified backup and restore.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="s-log">
+    <div class="sec">
+      <div class="sec-label">Recent work</div>
+      <div>
+        <h2>A sample of the current queue</h2>
+        <p class="note">Edge, PKI, and incident work from the past few months. Client names, hostnames, and ticket references are omitted.</p>
+        <div class="log">
+
+          <div class="entry">
+            <div class="tag t-waf">WAF</div>
+            <div class="entry-body">
+              <strong>Enterprise WAF onboarding programme</strong>
+              <p>Leading 18 production hostnames across several business units onto Akamai WAF — policy authoring, alert-mode bake, false-positive tuning with app owners, then enforcement, against a fixed quarter-end deadline.</p>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="tag t-route">Routing</div>
+            <div class="entry-body">
+              <strong>Path-based origin split for a mobile API tier</strong>
+              <p>Carved a mobile API path out of a shared property onto a separate origin, staged and validated end to end before production activation. Pinned edge-to-origin HTTP/2 off where the origin's header handling required it, rather than discovering it in production.</p>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="tag t-inc">Incident</div>
+            <div class="entry-body">
+              <strong>Partner users blocked by an edge deny rule</strong>
+              <p>A deny-by-IP rule on a partner-specific path was rejecting legitimate traffic. Diagnosed through Property Manager and Edge Diagnostics, corrected the allowlist, and restored access the same session.</p>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="tag t-inc">Incident</div>
+            <div class="entry-body">
+              <strong>400s from a recursive redirect loop</strong>
+              <p>Traced repeated 400 responses to recursive URL encoding introduced at the application/IdP layer — not the edge. Handed the app team a reproducible trace instead of a workaround.</p>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="tag t-inc">Incident</div>
+            <div class="entry-body">
+              <strong>Intermittent 503s isolated to authoritative DNS</strong>
+              <p>Ruled out configuration drift on a reporting hostname and demonstrated the failures tracked authoritative DNS flakiness, redirecting the investigation to the right owner.</p>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="tag t-pki">PKI</div>
+            <div class="entry-body">
+              <strong>Origin trust-chain rotation ahead of an EV CA expiry</strong>
+              <p>Staged new root and intermediate CAs into custom trust sets across properties before an expiring EV intermediate could break origin verification — and used the same rotation to resolve a 503 caused when an origin cert change swapped its chain unannounced.</p>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="tag t-id">Identity</div>
+            <div class="entry-body">
+              <strong>SAML federation with an enterprise banking partner</strong>
+              <p>Stood up a PingFederate SAML integration and, during certificate exchange, caught that a private key had been delivered mislabeled as a public certificate. Halted the exchange and escalated to security rather than installing it.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="s-built">
+    <div class="sec">
+      <div class="sec-label">Built</div>
+      <div>
+        <h2>Things I build outside work</h2>
+        <div class="projects">
+          <div class="card">
+            <h3>Premier League edge model</h3>
+            <p>A self-contained, browser-based match prediction app. Dixon–Coles bivariate Poisson with xG blending, bookmaker devig, and Kelly-criterion stake sizing — built to find edge against the closing line rather than to guess scorelines.</p>
+            <div class="stack"><em>Dixon–Coles</em><em>xG</em><em>devig</em><em>Kelly</em><em>single-file JS</em></div>
+          </div>
+          <div class="card p2">
+            <h3>Personal finance tracker</h3>
+            <p>An application for consolidating accounts and tracking spending and net position over time, built for my own use rather than as a product.</p>
+            <div class="stack"><em>personal tooling</em></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="s-cred">
+    <div class="sec">
+      <div class="sec-label">Credentials</div>
+      <div>
+        <h2>Certifications &amp; education</h2>
+        <div class="certs">
+          <div class="cert"><span class="yr">2025</span><span class="nm">AWS Certified DevOps Engineer — Professional</span></div>
+          <div class="cert"><span class="yr">2024</span><span class="nm">Certified Kubernetes Administrator (CKA)</span></div>
+          <div class="cert"><span class="yr">2023</span><span class="nm">AWS Certified Solutions Architect — Associate</span></div>
+          <div class="cert"><span class="yr">2023</span><span class="nm">HashiCorp Certified: Terraform Associate</span></div>
+          <div class="cert"><span class="yr">2022</span><span class="nm">Microsoft Certified: Azure Administrator (AZ-104)</span></div>
+        </div>
+        <div class="edu">
+          <div><b>M.Sc., Electrical Engineering</b><span>Minnesota State University</span></div>
+          <div><b>B.Sc., Electrical Engineering</b><span>Ladoke Akintola University of Technology</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-spectrum"><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="footer-line">
+      <span>Paul Ade Folarin</span>
+      <a href="mailto:alosmevas@gmail.com">alosmevas@gmail.com</a>
+      <a href="https://github.com/lucabrazzi10">github.com/lucabrazzi10</a>
+      <span>Minnesota · open to remote</span>
+    </div>
+  </footer>
+
+</div>
+
 </body>
 </html>
